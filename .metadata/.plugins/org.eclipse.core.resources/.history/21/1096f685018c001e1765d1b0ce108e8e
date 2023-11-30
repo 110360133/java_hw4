@@ -1,0 +1,19 @@
+package project_hw;
+
+public class TheTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        //sample 4-1
+		RacingCar rccar1;
+		rccar1 = new RacingCar();
+	
+		rccar1.setCar(1234,20.5);
+		
+		rccar1.setCourse(5);
+	}
+}
+class Car
+{
+	
+}

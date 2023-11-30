@@ -1,0 +1,557 @@
+public class TheTest {
+	public static void main(String[] args) {
+		
+		System.out.println("///// P4 /////");
+		RacingCar4 rccar4;
+		rccar4 = new RacingCar4();
+		rccar4.setCar(1234, 20.5);
+		rccar4.setCourse(5);
+		
+		System.out.println("\n///// P6 /////");
+		RacingCar6 rccar6 = new RacingCar6(1234, 20.5, 5);
+		
+		System.out.println("\n///// P9 /////");
+		RacingCar9 rccar9 = new RacingCar9();
+		rccar9.newShow();
+		
+		System.out.println("\n///// P11 /////");
+		RacingCar11 rccar11 = new RacingCar11();
+		rccar11.setCar(1234, 20.5);
+		rccar11.setCourse(5);
+		rccar11.show();
+		
+		System.out.println("\n///// P14 /////");
+		Car14 car14 = new RacingCar14();
+		car14.setCar(1234, 20.5);
+		car14.show();
+		
+		System.out.println("\n///// P17 /////");
+		Car17 cars[] = new Car17[2];
+		
+		cars[0] = new Car17();
+		cars[0].setCar(1234, 20.5);
+		
+		cars[1] = new RacingCar17();
+		cars[1].setCar(4567, 30.5);
+		
+		for(int i = 0; i < cars.length; i++) {
+			cars[i].show();
+		}
+		
+		System.out.println("\n///// P24 /////");
+		Car24 car24 = new Car24();
+		car24.setCar(1234, 20.5);
+		System.out.println(car24);
+		
+		System.out.println("\n///// P25 /////");
+		Car25 car25_1 = new Car25();
+		Car25 car25_2 = new Car25();
+		
+		Car25 car25_3;
+		car25_3 = car25_1;
+		
+		System.out.println("Car1與Car2相同" + car25_1.equals(car25_2));
+		System.out.println("Car1與Car3相同" + car25_1.equals(car25_3));
+		
+		System.out.println("\n///// P26 /////");
+		Car26[] cars26 = new Car26[2];
+		
+		cars26[0] = new Car26();
+		cars26[1] = new RacingCar26();
+		
+		for(int i = 0; i <  cars.length; i++) {
+			Class cl = cars[i].getClass();
+			System.out.println("第" + (i + 1) + "個物件的類別是" + cl);
+		}
+		
+		
+		System.out.println("\n///// P29 /////");
+		Vehicle29[] vc29 = new Vehicle29[2];
+		vc29[0] = new Car29(1234, 20.5);
+		vc29[0].setSpeed(60);
+		
+		vc29[1] = new Plane29(232);
+		vc29[1].setSpeed(500);
+		
+		for(int i = 0; i < vc29.length; i++) {
+			vc29[i].show();
+		}
+		
+		System.out.println("\n///// P32 /////");
+		
+		Vehicle32[] vc32;
+		vc32 = new Vehicle32[2];
+		
+		vc32[0] = new Car32(1234,20.5);
+		vc32[1] = new Plane32(232);
+		
+		for(int i = 0; i < vc32.length; i++) {
+			if(vc32[i] instanceof Car32) {
+				System.out.println("第" + (i + 1) + "個物件是Car類別");
+			}else {
+				System.out.println("第" + (i + 1) + "個物件不是Car類別");
+			}
+		}
+		
+		System.out.println("\n///// P38 /////");
+		iVehicle38[] ivc38 = new iVehicle38[2];
+		ivc38[0] = new Car38(1234, 20.5);
+		ivc38[1] = new Plane38(232);
+		
+		for(int i = 0; i < ivc38.length; i++) {
+			ivc38[i].show();
+		}
+		
+		System.out.println("\n///// P41 /////");
+		Car41 car41 = new Car41(1234, 20.5);
+		car41.vShow();
+		car41.mShow();
+	}
+
+}
+
+class Car4{
+	private int num;
+	private double gas;
+	
+	public Car4() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油是" + gas);
+	}
+}
+
+class RacingCar4 extends Car4{
+	private int course;
+	
+	public RacingCar4() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+}
+
+class Car6{
+	private int num;
+	private double gas;
+	
+	public Car6() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public Car6(int n, double g){
+		num = n;
+		gas = g;
+		System.out.println("生產了車號為" + num + "，汽油量為" + gas + "的車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油是" + gas);
+	}
+}
+
+class RacingCar6 extends Car6{
+	private int course;
+	
+	public RacingCar6() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public RacingCar6(int n, double g, int c) {
+		super(n, g);
+		course = c;
+		System.out.println("生產了編號為" + course + "的賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+}
+
+class Car9{
+	protected int num;
+	protected double gas;
+	
+	public Car9() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油是" + gas);
+	}
+}
+
+class RacingCar9 extends Car9{
+	private int course;
+	
+	public RacingCar9() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+	
+	public void newShow() {
+		System.out.println("賽車的車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("賽車編號是" + course);
+	}
+}
+
+class Car11{
+	protected int num;
+	protected double gas;
+	
+	public Car11() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油是" + gas);
+	}
+}
+
+class RacingCar11 extends Car11{
+	private int course;
+	
+	public RacingCar11() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+	
+	public void show() {
+		System.out.println("賽車的車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("賽車編號是" + course);
+	}
+}
+
+class Car14{
+	protected int num;
+	protected double gas;
+	
+	public Car14() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油是" + gas);
+	}
+}
+
+class RacingCar14 extends Car14{
+	private int course;
+	
+	public RacingCar14() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+	
+	public void show() {
+		System.out.println("賽車的車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("賽車編號是" + course);
+	}
+}
+
+class Car17{
+	protected int num;
+	protected double gas;
+	
+	public Car17() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "汽油量設為" + gas);
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油量是" + gas);
+	}
+}
+
+class RacingCar17 extends Car17{
+	private int course;
+	
+	public RacingCar17() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+	
+	public void setCourse(int c) {
+		course = c;
+		System.out.println("將賽車編號設為" + course);
+	}
+	
+	public void show() {
+		System.out.println("賽車的車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("賽車編號是" + course);
+	}
+}
+
+class Car24{
+	protected int num;
+	protected double gas;
+	
+	public Car24() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+	
+	public void setCar(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("將車號設為" + num + "，汽油量設為" + gas);
+	}
+	
+	public String toString() {
+		String str = "車號:" + num + " 汽油量" + gas;
+		return str;
+	}
+}
+
+class Car25{
+	protected int num;
+	protected double gas;
+	
+	public Car25() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+}
+
+class Car26{
+	protected int num;
+	protected double gas;
+	
+	public Car26() {
+		num = 0;
+		gas = 0.0;
+		System.out.println("生產了車子");
+	}
+}
+
+class RacingCar26 extends Car26{
+	private int course;
+	
+	public RacingCar26() {
+		course = 0;
+		System.out.println("生產了賽車");
+	}
+}
+
+abstract class Vehicle29
+{
+	protected int speed;
+	public void setSpeed(int s) {
+		speed = s;
+		System.out.println("將速度設為" + speed + "了");
+	}
+	abstract void show();
+}
+
+class Car29 extends Vehicle29{
+	protected int num;
+	protected double gas;
+	
+	public Car29(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("生產了車號為" + num + "汽油量為" + gas + "的車子");
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("速度是" + speed);
+	}
+}
+
+class Plane29 extends Vehicle29{
+	private int flight;
+	public Plane29(int f) {
+		flight = f;
+		System.out.println("生產了" + flight + "班次的飛機");
+	}
+	
+	public void show() {
+		System.out.println("飛機的班次是" + flight);
+		System.out.println("速度是" + speed);
+	}
+}
+
+abstract class Vehicle32
+{
+	protected int speed;
+	public void setSpeed(int s) {
+		speed = s;
+		System.out.println("將速度設為" + speed + "了");
+	}
+	abstract void show();
+}
+
+class Car32 extends Vehicle32{
+	protected int num;
+	protected double gas;
+	
+	public Car32(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("生產了車號為" + num + "汽油量為" + gas + "的車子");
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油量是" + gas);
+		System.out.println("速度是" + speed);
+	}
+}
+
+class Plane32 extends Vehicle32{
+	private int flight;
+	public Plane32(int f) {
+		flight = f;
+		System.out.println("生產了" + flight + "班次的飛機");
+	}
+	
+	public void show() {
+		System.out.println("飛機的班次是" + flight);
+		System.out.println("速度是" + speed);
+	}
+}
+
+interface iVehicle38{
+	int weight = 1000;
+	void show();
+}
+
+class Car38 implements iVehicle38{
+	protected int num;
+	protected double gas;
+	
+	public Car38(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("生產了車號為" + num + "，汽油量為" + gas + "的車子");
+	}
+	
+	public void show() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油量是" + gas);
+	}
+}
+
+class Plane38 implements iVehicle38{
+	private int flight;
+	public Plane38(int f) {
+		flight = f;
+		System.out.println("生產了" + flight + "班次的飛機");
+	}
+	
+	public void show() {
+		System.out.println("飛機的班次是" + flight);
+	}
+}
+
+interface iVehicle41 {
+	void vShow();
+}
+
+interface iMaterial41{
+	void mShow();
+}
+
+class Car41 implements iVehicle41, iMaterial41{
+	private int num;
+	private double gas;
+	
+	public Car41(int n, double g) {
+		num = n;
+		gas = g;
+		System.out.println("生產了車號為" + num + "，汽油量為" + gas + "的車子");
+	}
+	
+	public void vShow() {
+		System.out.println("車號是" + num);
+		System.out.println("汽油輛是" + gas);
+	}
+	
+	public void mShow() {
+		System.out.println("車子的材質是鐵");
+	}
+}
